@@ -8,9 +8,9 @@ func TestBinarySearch(t *testing.T) {
 	single := []int{0}
 
 	testTable := []struct {
-		arr    []int
-		target int
-		output int
+		arr      []int
+		target   int
+		expected int
 	}{
 		// happy path
 		{ordered, 0, 0},
@@ -25,8 +25,8 @@ func TestBinarySearch(t *testing.T) {
 
 	for _, table := range testTable {
 		testIdx := BinarySearch(table.arr, table.target)
-		if testIdx != table.output {
-			t.Errorf("BinarySearch(%v, %d), expected: %d, got: %d", table.arr, table.target, table.output, testIdx)
+		if testIdx != table.expected {
+			t.Errorf("BinarySearch(%v, %d), expected: %d, got: %d", table.arr, table.target, table.expected, testIdx)
 		}
 	}
 }
