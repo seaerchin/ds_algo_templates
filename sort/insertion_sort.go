@@ -20,3 +20,20 @@ func InsertionSort(arr []int) (sorted []int) {
 	}
 	return sorted
 }
+
+// recursive version of the above
+// 1 major change - this is modified IN PLACE
+func recursive(arr []int) (sorted []int) {
+	if len(arr) <= 1 {
+		return arr
+	}
+	sorted, last := recursive(arr[:len(arr)-1]), arr[len(arr)-1]
+	// find correct place to insert
+	sorted = append(sorted, last)
+	prev := len(sorted) - 2
+	for prev >= 0 && last < sorted[prev] {
+		sorted[prev], sorted[prev+1] = last, sorted[prev]
+		prev--
+	}
+	return sorted
+}
