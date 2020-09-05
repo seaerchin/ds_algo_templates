@@ -16,14 +16,17 @@ func TestMergeSort(t *testing.T) {
 	}
 }
 
-// this isn't a rigorous test; should rewrite
+// this isn't a rigorous test; should rewrite or have custom test table just for this
 func TestMerge(t *testing.T) {
-	left, right := []int{1, 4}, []int{2, 2, 3}
-	got := merge(left, right)
-	expected := []int{1, 2, 2, 3, 4}
-	for k := range expected {
-		if got[k] != expected[k] {
-			t.Errorf("expected %d, got %d", expected, got)
+	for _, table := range testTable { 
+		mid := len(table.expected) / 2
+		left, right := table.expected[:mid], table.expected[mid:]
+		got := merge(left, right)
+		for i := range got { 
+			if got[i] != table.expected[i] { 
+				t.Errorf("merge(%v, %v); expected %d, got %d", left, right, table.expected, got)
+				break
+			}
 		}
 	}
 }
