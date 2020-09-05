@@ -5,20 +5,6 @@ import (
 )
 
 func TestMergeSort(t *testing.T) {
-	sorted := []int{1, 2, 3, 4, 5}
-	one := []int{1}
-	none := []int{}
-	scrambled := []int{2, 4, 3, 5, 1}
-	testTable := []struct {
-		input    []int
-		expected []int
-	}{
-		{sorted, sorted},
-		{one, one},
-		{none, none},
-		{scrambled, sorted},
-	}
-
 	for _, table := range testTable {
 		got := MergeSort(table.input)
 		for idx := range got {
@@ -30,6 +16,7 @@ func TestMergeSort(t *testing.T) {
 	}
 }
 
+// this isn't a rigorous test; should rewrite
 func TestMerge(t *testing.T) {
 	left, right := []int{1, 4}, []int{2, 2, 3}
 	got := merge(left, right)
