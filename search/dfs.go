@@ -1,6 +1,6 @@
 package search
 
-import tree "ds_algo_templates/trees"
+import tree "ds_algo_templates/data_structures/trees"
 
 // DFS (depth first search) uses traverses a binary tree and does some work on each node;
 // unlike BFS which expands the set of immediate nodes, DFS proceeds by recursion of the immediate left/right node

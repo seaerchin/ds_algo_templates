@@ -1,6 +1,6 @@
 package search
 
-import tree "ds_algo_templates/trees"
+import tree "ds_algo_templates/data_structures/trees"
 
 // BFS (breadth first search) uses traverses a binary tree and does some work on each node;
 // unlike DFS which expands the immediate node until it hits the base case (in this case when node is nil)

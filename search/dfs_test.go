@@ -1,7 +1,7 @@
 package search
 
 import (
-	tree "ds_algo_templates/trees"
+	tree "ds_algo_templates/data_structures/trees"
 	"testing"
 )
 
