@@ -2,18 +2,10 @@ package sort
 
 import graph "ds_algo_templates/data_structures/graph"
 
-// TODO: test this
+// Toposort sorts the node of a graph by its topological ordering - i.e., number of in/out edges depending
 func Toposort(g graph.Graph) []int {
-	n := len(g.Nodes())
-	seen := make(map[int]bool)
-	ordering := make([]int, n)
-
-	for at := 0; at < n; at++ {
-		if !seen[at] {
-			visited := []int{}
-
-		}
-	}
+	// TODO: write and test this
+	return []int{}
 }
 
 func dfs(g graph.Graph, seen map[int]bool, results []int, at graph.Node) {
